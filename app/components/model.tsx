@@ -1,4 +1,5 @@
 import React from 'react';
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
 interface MyObject {
   isvisible: boolean;
@@ -10,19 +11,17 @@ interface MyObject {
 const Model = ({ isvisible, onClose ,children}: MyObject) => {
   if (!isvisible) return null;
 
-  const handleClose = (e: React.MouseEvent<HTMLDivElement>) => {
-    const target = e.target as HTMLDivElement; // Cast e.target to HTMLDivElement
-    if (target.id === 'wrapper') onClose();
-  };
 
   return (
-    <div className='z-10 fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center ' id='wrapper' onClick={handleClose}>
-      <div className='w-[600px]'>
-        <button className='text-white text-xl place-self-end' onClick={() => onClose()}>X</button>
-        <div className='bg-white p-2 rounded'>
-          {children}
-        </div>
-      </div>
+    <div className='z-10 fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center ' id='wrapper' >
+  <Player
+  autoplay
+  loop
+  src="https://lottie.host/5a8476e9-0fb4-4b00-98a8-0e06cd29eee5/yn5NmM8wLS.json"
+  style={{ height: '300px', width: '300px' }}
+>
+  <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+</Player>
     </div>
   );
 };

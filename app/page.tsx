@@ -16,11 +16,14 @@ export default function Home() {
   const handleNavigate = () => {
     router.push('/views');
   };
+  const handleNavigate2 = () => {
+    router.push('/patients');
+  };
 
   return (
     <main className=" min-h-screen bg-white">
       <div className=" flex flex-row ">
-      <Sidebar handleNavigate={handleNavigate} handledashboard={handledashboard}/>
+      <Sidebar handleNavigate={handleNavigate} handledashboard={handledashboard} handleNavigate2={handleNavigate2}/>
       <Dashboard/>
       </div>
     </main>

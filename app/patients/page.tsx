@@ -1,7 +1,7 @@
 "use client"
 import "babel-polyfill"
 import { useRouter } from "next/navigation";
-import Minutespage from "../components/liveconsult";
+import PatientPage from "../components/patients";
 import Sidebar from "../components/sidebar";
 
 
@@ -23,7 +23,7 @@ export default function Home() {
    
       <div className=" flex flex-row ">
       <Sidebar handledashboard={handledashboard} handleNavigate={handleNavigate} handleNavigate2={handleNavigate2}/>
-      <Minutespage/>
+      <PatientPage/>
       </div>
 
   )

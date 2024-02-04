@@ -6,6 +6,7 @@ import { RiLiveLine } from 'react-icons/ri';
 import Image from 'next/image'
 import backimage from '../../assets/blackimage.png'
 import { ChangeEvent, Fragment, useState } from 'react';
+import { IoPersonSharp } from "react-icons/io5";
 import Model from './model';
 import axios from 'axios';
 import Swal from 'sweetalert2';
@@ -14,10 +15,11 @@ import { useRouter } from 'next/router';
 
 interface SidebarProps {
   handleNavigate: () => void;
+  handleNavigate2: () => void;
   handledashboard: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ handleNavigate,handledashboard}) => {
+const Sidebar: React.FC<SidebarProps> = ({ handleNavigate,handledashboard,handleNavigate2}) => {
 
 
 
@@ -101,7 +103,7 @@ function myFunction2(){
 }
 
 function myFunction3(){
-  handleNavigate();
+  handleNavigate2();
   setClicked(2);
   setClicked(2);
   console.log(clicked);
@@ -127,7 +129,7 @@ function myFunction3(){
         <button type="button" className={`hover:text-white mt-5 justify-between w-56 ${clicked == 2  ? 'text-white' :  'text-[#6e54ff]'  } ${clicked == 2  ? 'bg-[#6e54ff]' :  'bg-[#6e54ff00]' }  text-[#6e54ff] lg:text-md hover:bg-blue-400 focus:ring-2 focus:outline-none focus:ring-[#6e54ff]/50  rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:hover:bg-[#6e54ff]/40 dark:focus:ring-white-600 mr-2 mb-2`} onClick={myFunction3}>
         Patients
           <div className="w-14"></div>
-          <RiLiveLine />
+          <IoPersonSharp />
         </button>
         
     </div>
